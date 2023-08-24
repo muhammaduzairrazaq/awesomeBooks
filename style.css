@@ -1,0 +1,13 @@
+body {
+  box-sizing: border-box;
+}
+
+.add-books ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.add-books ul li {
+  margin-top: 1rem;
+}
