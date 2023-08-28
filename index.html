@@ -1,30 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Awesome Books</title>
 </head>
-<body>
-    <div class="main-container">
-        <h1>Awesome Books</h1>
-        <div id="books-container">
-            <!-- <p>Lorem ispum</p>
-            <p>Testero Testy</p>
-            <button id="remove-book">Remove</button>
-            <hr> -->
-        </div>
-        
-        <div class="add-books">
-            <ul>
-                <li><input id="book-title" type="text" placeholder="Title"></li>
-                <li><input id="book-author" type="text" placeholder="Author"></li>
-                <li><button id="add-books">Add</button></li>
-            </ul>
-        </div>
-    </div>
 
-<script type="text/javascript" src="script.js"></script>
+<body>
+    <div class="container">
+        <h1>Awesome Books</h1>
+
+        <section class="section1">
+            <h2>Book List</h2>
+            <table class="book-table">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="books-list">
+
+                </tbody>
+            </table>
+        </section>
+
+        <section class="section2">
+            <h2>Add Book</h2>
+            <div class="input-container">
+                <input type="text" id="book-title" placeholder="Title">
+                <input type="text" id="book-author" placeholder="Author">
+            </div>
+            <button id="add-books">Add</button>
+        </section>
+    </div>
+    <script type="module" src="Main.js"></script>
 </body>
+
 </html>

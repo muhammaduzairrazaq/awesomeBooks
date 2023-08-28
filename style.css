@@ -1,13 +1,116 @@
-body {
-  box-sizing: border-box;
-}
-
-.add-books ul {
-  list-style: none;
+body,
+h1,
+h2,
+table,
+th,
+td,
+button,
+input {
   margin: 0;
   padding: 0;
+  border: none;
+  outline: none;
+  font-family: Arial, sans-serif;
 }
 
-.add-books ul li {
-  margin-top: 1rem;
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.container {
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  width: 90%;
+  max-width: 60rem;
+}
+
+h1 {
+  color: pink;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: pink;
+  margin-bottom: 10px;
+}
+
+.book-table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.book-table th,
+.book-table td {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.book-table th {
+  background-color: pink;
+}
+
+.book-table tr {
+  background-color: #f5f5f5;
+  border-bottom: 1px solid pink;
+}
+
+.remove-button {
+  background-color: pink;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.remove-button:hover {
+  background-color: #ff69b4;
+  transform: scale(1.05);
+}
+
+.section2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+input[type="text"] {
+  height: 1rem;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid pink;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+  border-color: #ff69b4;
+}
+
+#add-books {
+  background-color: pink;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+#add-books:hover {
+  background-color: #ff69b4;
+  transform: scale(1.05);
 }
