@@ -1,4 +1,5 @@
 body,
+main,
 h1,
 h2,
 table,
@@ -14,35 +15,114 @@ input {
 }
 
 body {
+  font-size: 1.1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+}
+
+.logo {
+  margin: 0;
+  padding: 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: auto;
+  font-family: "Open Sans Light", sans-serif;
+  font-weight: 300;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: pink;
+  margin: 3px 0;
+}
+
+.menu-toggle .bar {
+  width: 30px;
+  height: 3px;
+  background-color: pink;
+  margin: 4px 0;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-10px, -10px);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin: 0 20px;
+}
+
+.nav-links a {
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  font-family: "Open Sans Light", sans-serif;
+  font-weight: 300;
+}
+
+.nav-links a:hover {
+  color: #ff69b4;
+}
+
+main {
+  width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  font-size: 1rem;
-  text-align: center;
+  flex-grow: 1;
 }
 
 .container {
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
+  margin-top: 5rem;
   padding: 20px;
   width: 90%;
   max-width: 60rem;
 }
 
-h1 {
-  color: pink;
-  margin-bottom: 20px;
-}
-
-h2 {
-  color: pink;
-  margin-bottom: 10px;
-}
-
 .book-table {
   width: 100%;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 
@@ -65,7 +145,7 @@ h2 {
   background-color: pink;
   color: white;
   border-radius: 5px;
-  padding: 5px 10px;
+  padding: 10px 10px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
 }
@@ -75,26 +155,32 @@ h2 {
   transform: scale(1.05);
 }
 
-.section2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.remove-button:active {
+  background-color: #af4c7e;
 }
 
-.input-container {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
+.contact li {
+  margin-top: 10px;
+}
+
+#input-container li {
+  list-style: none;
+}
+
+#input-container {
+  padding: 0;
 }
 
 input[type="text"] {
-  height: 1rem;
-  width: 100%;
-  margin-bottom: 10px;
+  height: 1.5rem;
+  width: 70%;
+  max-width: 30rem;
+  margin-bottom: 20px;
   padding: 10px;
   border: 1px solid pink;
   border-radius: 5px;
   transition: border-color 0.3s;
+  font-size: 1.1rem;
 }
 
 input[type="text"]:focus {
@@ -113,4 +199,92 @@ input[type="text"]:focus {
 #add-books:hover {
   background-color: #ff69b4;
   transform: scale(1.05);
+}
+
+#add-books:active {
+  background-color: #af4c7e;
+}
+
+.section3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#contact-information {
+  text-align: left;
+}
+
+#contact-information h1 {
+  text-align: center;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  height: 2rem;
+}
+
+.display-content {
+  display: none;
+}
+
+#dateTime {
+  position: absolute;
+  right: 1rem;
+}
+
+@media screen and (min-width: 767px) {
+  header {
+    position: sticky;
+    top: 0;
+  }
+
+  #contact-information {
+    font-size: 1.5rem;
+  }
+
+  .navbar {
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+
+    /* position: absolute; */
+    top: 50px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+
+    /* z-index: 1; */
+  }
+
+  .nav-links.active {
+    display: flex;
+    padding: 2rem 2rem 2rem 0;
+  }
+
+  .nav-links li {
+    margin-top: 20px;
+  }
+
+  .nav-bar {
+    align-items: flex-start;
+    flex-direction: row-reverse;
+  }
 }
