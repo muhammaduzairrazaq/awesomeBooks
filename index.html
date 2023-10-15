@@ -1,26 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Awesome Books</title>
 </head>
-<body>
-    <div class="main-container">
-        <h1>Awesome Books</h1>
-        <div id="books-container">
-        </div>
-        
-        <div class="add-books">
-            <ul>
-                <li><input id="book-title" type="text" placeholder="Title"></li>
-                <li><input id="book-author" type="text" placeholder="Author"></li>
-                <li><button id="add-books">Add</button></li>
-            </ul>
-        </div>
-    </div>
 
-<script type="text/javascript" src="script.js"></script>
+<body>
+    <header>
+        <nav class="navbar">
+            <h1 class="logo" onclick="showContent('section1')">Awesome Books</h1>
+            <div class="menu-toggle">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </div>
+            <ul class="nav-links">
+                <li><a onclick="showContent('section1')">List</a></li>
+                <li><a onclick="showContent('section2')">Add new</a></li>
+                <li><a onclick="showContent('section3')">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <p id="dateTime"></p>
+        <div class="container">
+            <section class="section1">
+                <h1>All awesome books</h1>
+                <table class="book-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="books-list">
+                    </tbody>
+                </table>
+            </section>
+            <section class="section2 display-content">
+                <h1>Add books</h1>
+                <ul id="input-container">
+                    <li><input type="text" id="book-title" placeholder="Title"></li>
+                    <li><input type="text" id="book-author" placeholder="Author"></li>
+                    <li><button id="add-books">Add</button></li>
+                </ul>
+            </section>
+            <section class="section3 display-content">
+                <div id="contact-information">
+                    <h1>Contact information</h1>
+                    <p>Do have any questions or just want to say "Hello"? <br> You can reach to us.</p>
+                    <ul class="contact">
+                        <li>Our e-mail: mail@mail.com</li>
+                        <li>Our phone number: 03114578510</li>
+                        <li>Our address: Street no 1, Burewala, Pakistan</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023</p>
+    </footer>
+    <script type="module" src="Main.js"></script>
+    <script src="navBar.js"></script>
+    <script src="date.js"></script>
 </body>
+
 </html>
